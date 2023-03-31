@@ -37,13 +37,15 @@ class CustomerResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
                 Tables\Columns\TextColumn::make('alamat'),
-                Tables\Columns\TextColumn::make('status')->enum([
-                    0 => 'ada', 1 => 'tidak'
-                ])
-                    ->colors([
-                        'danger' => static fn ($state): bool => $state == 0,
-                        'success' => static fn ($state): bool => $state == 1
-                ]),
+                Tables\Columns\BadgeColumn::make('status')
+                ->enum([
+                    0 => 'ada', 
+                    1 => 'tidak']),
+                    // ->colors([
+                    //     'danger' => static fn ($state): bool => $state == 0,
+                    //     'success' => static fn ($state): bool => $state == 1,
+                    // ]),
+                Tables\Columns\TextColumn::make('agama'),
                 Tables\Columns\TextColumn::make('tgl_lahir'),
             ])
             ->filters([
