@@ -14,7 +14,7 @@ class Customer extends Model
         'nama',
         'alamat',
         'status',
-        'bebas',
+        'tg_lahir',
         
     ];
     // public function kategori()

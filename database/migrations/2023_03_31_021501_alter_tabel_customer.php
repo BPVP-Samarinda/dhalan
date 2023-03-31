@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama')->nulllable();
             $table->text('alamat')->nulltable();
             $table->string('status')->default(0);
-            $table->string('bebas')->default(0);
+            $table->date('tgl_lahir')->default(0);
             $table->timestamps();
         });
     }

@@ -24,12 +24,12 @@ class CustomerResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama'),
-                Forms\Components\Textarea::make('deskripsi'),
-                Forms\Components\TextInput::make('harga'),
+                Forms\Components\Textarea::make('alamat'),
+                Forms\Components\TextInput::make('status'),
                     // ->extraAttributes([
                     //     'class' => 'bg-gray-50'
                     // ]),
-                Forms\Components\TextInput::make('stok'),
+                Forms\Components\DatePicker::make('tgl_lahir'),
             ]);
     }
 
@@ -38,9 +38,9 @@ class CustomerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
-                Tables\Columns\TextColumn::make('deskripsi'),
-                Tables\Columns\TextColumn::make('harga'),
-                Tables\Columns\TextColumn::make('stok'),
+                Tables\Columns\TextColumn::make('alamat'),
+                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('tgl_lahir'),
             ])
             ->filters([
                 //
