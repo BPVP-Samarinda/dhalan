@@ -26,7 +26,7 @@ class CustomerResource extends Resource
                 Forms\Components\TextInput::make('nama'),
                 Forms\Components\Textarea::make('alamat'),
                 Forms\Components\Toggle::make('status')->onColor('success')->offColor('danger'),
-                Forms\Components\Radio::make('agama'),
+                Forms\Components\Radio::make('agama')->enum('islam', 'kristen', 'katolik', 'budha', 'hindu', 'konghuchu'),
                 Forms\Components\DatePicker::make('tgl_lahir'),
             ]);
     }
