@@ -25,9 +25,8 @@ class TableProdukSeeder extends Seeder
                 'deskripsi' => 'Temannya amparan tatak',
                 'harga' => 15_0000,
                 'stok' => 50,
-            ]
+            ],
             ];
-
             foreach ($data as $item) {
                 Produk::create($item);
             }
