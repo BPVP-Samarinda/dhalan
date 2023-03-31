@@ -12,9 +12,13 @@ class Customer extends Model
     protected $table = 'customer'; 
     protected $fillable = [
         'nama',
-        'deskripsi',
-        'gambar',
-        'harga',
-        'stok',
+        'alamat',
+        'status',
+        'bebas',
+        
     ];
+    // public function kategori()
+    // {
+    //     return $this->belongsTo(Kategori::class);
+    // }
 }
