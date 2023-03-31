@@ -14,6 +14,7 @@ class Customer extends Model
         'nama',
         'alamat',
         'status',
+        'agama',
         'tg_lahir',
         
     ];

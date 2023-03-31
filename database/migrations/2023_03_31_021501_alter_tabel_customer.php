@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama')->nulllable();
             $table->text('alamat')->nulltable();
-            $table->string('status')->default(0);
-            $table->date('tgl_lahir')->default(0);
+            $table->enum('status', ['ada', 'tidak']);
+            $table->enum('agama', ['islam', 'kristen', 'katolik', 'budha', 'hindu', 'konghuchu']);
+            $table->date('tgl_lahir');
             $table->timestamps();
         });
     }

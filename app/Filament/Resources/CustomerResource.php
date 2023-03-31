@@ -25,10 +25,8 @@ class CustomerResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama'),
                 Forms\Components\Textarea::make('alamat'),
-                Forms\Components\TextInput::make('status'),
-                    // ->extraAttributes([
-                    //     'class' => 'bg-gray-50'
-                    // ]),
+                Forms\Components\Toggle::make('status')->onColor('success')->offColor('danger'),
+                Forms\Components\Radio::make('agama'),
                 Forms\Components\DatePicker::make('tgl_lahir'),
             ]);
     }
@@ -39,7 +37,13 @@ class CustomerResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
                 Tables\Columns\TextColumn::make('alamat'),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('status')->enum([
+                    0 => 'ada', 1 => 'tidak'
+                ])
+                    ->colors([
+                        'danger' => static fn ($state): bool => $state == 0,
+                        'success' => static fn ($state): bool => $state == 1
+                ]),
                 Tables\Columns\TextColumn::make('tgl_lahir'),
             ])
             ->filters([
@@ -53,11 +57,11 @@ class CustomerResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageCustomers::route('/'),
         ];
-    }    
+    }
 }
