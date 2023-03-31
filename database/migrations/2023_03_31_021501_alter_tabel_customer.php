@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('customer', function($table){
             $table->id();
             $table->string('nama')->nulllable();
-            $table->text('deskripsi')->nulltable();
-            $table->double('harga')->default(0);
-            $table->integer('stok')->default(0);
+            $table->text('alamat')->nulltable();
+            $table->string('status')->default(0);
+            $table->string('bebas')->default(0);
             $table->timestamps();
         });
     }
